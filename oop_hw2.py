@@ -171,28 +171,67 @@ Create an interface for the Laptop with the next methods: Screen, Keyboard, Touc
 and create an HPLaptop class by using your interface.
 """
 
-class Laptop(ABC):
+class laptop(ABC):
     @abstractmethod
-    def Screen(self):
+    def screen(self):
         raise NotImplementedError
 
     @abstractmethod
-    def Keyboard(self):
+    def keyboard(self):
         raise NotImplementedError
 
     @abstractmethod
-    def Touchpad(self):
+    def touchpad(self):
         raise NotImplementedError
 
     @abstractmethod
-    def WebCam(self):
+    def webcam(self):
         raise NotImplementedError
 
     @abstractmethod
-    def Ports(self):
+    def ports(self):
         raise NotImplementedError
 
     @abstractmethod
-    def Dynamics(self):
+    def dynamics(self):
         raise NotImplementedError
 
+
+class HPLaptop(laptop):
+    def __init__(self, model_hp, screen_size, keyboard_type, touchpad_type, webcam_type, ports_type, dynamics_type):
+        self.model_hp = model_hp
+        self.screen_size = screen_size
+        self.keyboard_type = keyboard_type
+        self.touchpad_type = touchpad_type
+        self.webcam_type = webcam_type
+        self.ports_type = ports_type
+        self.dynamics_type = dynamics_type
+
+    def screen(self):
+        print(self.screen_size)
+
+    def keyboard(self):
+        print(self.keyboard_type)
+
+    def touchpad(self):
+        print(self.touchpad_type)
+
+    def webcam(self):
+        print(self.webcam_type)
+
+    def ports(self):
+        print(self.ports_type)
+
+    def dynamics(self):
+        print(self.dynamics_type)
+
+
+laptop = HPLaptop("HP laptop pavilion 15", "15.5", "En-Ua", "have", "5mp",
+                  "2 x TPC, 1 x USB 2.0, 2 x USB 3.0", "JBL")
+
+laptop.screen()
+laptop.keyboard()
+laptop.touchpad()
+laptop.webcam()
+laptop.ports()
+laptop.dynamics()
